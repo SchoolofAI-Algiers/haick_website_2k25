@@ -1,0 +1,174 @@
+.hero-section {
+    position: relative;
+    padding: 6rem 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .bg-quadrant {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.25;
+    z-index: 0;
+  }
+  
+  .tl {
+    top: 0;
+    left: 0;
+    background-image: url('/bg-shape2.png');
+  }
+  
+  .tr {
+    top: 0;
+    right: 0;
+    background-image: url('/bg-shape.png');
+  }
+  
+  .bl {
+    bottom: 0;
+    left: 0;
+    background-image: url('/bg-shape.png');
+  }
+  
+  .br {
+    bottom: 0;
+    right: 0;
+    background-image: url('/bg-shape2.png');
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-logo {
+    margin-bottom: 2rem;
+    width: 260px;
+    height: auto;
+  }
+  
+  .hero-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+  }
+  
+  .join-button {
+    background: transparent;
+    border: 2px solid #f59e0b;
+    color: #f59e0b;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .join-button:hover {
+    background-color: #fff7ed;
+  }
+  
+  .event-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  .event-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .countdown {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .countdown-box {
+    background: url('/cadre1.png') no-repeat center/contain;
+    padding: 20px 20px 10px; 
+    min-width: 80px;
+    height: 100px; 
+    text-align: center;
+    font-weight: bold;
+    color: #239dbf;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    background-color: transparent;
+    box-shadow: none; 
+  }
+  
+  
+  .countdown-box p:first-child {
+    font-size: 1.5rem;
+    color: #239dbf;
+  }
+  
+  .countdown-box p:last-child {
+    font-size: 0.8rem;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+  
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .hero-logo {
+      width: 180px;
+      margin-bottom: 1.2rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.3rem;
+    }
+  
+    .join-button {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .countdown-box {
+      padding: 10px;
+      min-width: 70px;
+    }
+  
+    .countdown-box p:first-child {
+      font-size: 1.2rem;
+    }
+  
+    .countdown-box p:last-child {
+      font-size: 0.7rem;
+    }
+  
+    .event-info {
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+  }
+  
