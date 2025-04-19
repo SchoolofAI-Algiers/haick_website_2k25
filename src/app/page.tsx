@@ -1,10 +1,17 @@
-import { Button } from "@/components/ui/button";
+import Hero from '@/components/sections/Hero/Hero';
+import About from '@/components/sections/About/About';
+import AboutHaick from '@/components/sections/AboutHaick/AboutHaick';
+import Sponsor from '@/components/sections/Sponsor/Sponsor';
 
-export default function Home() {
-	return (
-		<div className="">
-			<h1 className="bg-red-500">Hey</h1>
-			<Button>Click me</Button>
-		</div>
-	);
+
+export default function HomePage() {
+  return (
+    <main>
+      <Hero />
+      <About/>
+      <AboutHaick/>
+      <Sponsor/>
+    
+    </main>
+  )
 }
