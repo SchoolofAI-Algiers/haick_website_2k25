@@ -1,6 +1,17 @@
 import "./globals.css";
+import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/layout/nav-bar";
 import PreLoaderProvider from "@/providers/preloader-provider";
+
+const geistSans = Geist({
+	variable: "--font-geist-sans",
+	subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+	variable: "--font-geist-mono",
+	subsets: ["latin"],
+});
 
 export const metadata = {
 	title: "HAICK 2025",
@@ -14,7 +25,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body>
+			<body
+				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+			>
 				<PreLoaderProvider>
 					<Navbar />
 					{children}
