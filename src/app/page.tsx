@@ -1,4 +1,3 @@
-import Footer from "@/components/layout/footer";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import AboutHaick from "@/components/sections/aboutHaick";
@@ -17,7 +16,6 @@ export default function HomePage() {
 			<PreviousEditions />
 			<Agenda />
 			<OurMentors />
-			<Footer />
 		</main>
 	);
 }

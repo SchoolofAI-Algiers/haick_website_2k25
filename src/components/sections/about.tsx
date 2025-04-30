@@ -1,34 +1,19 @@
 const About = () => {
+	const options = ["a", "B", "I", "🖋️", "🔗", "📷", "📄", "☰"];
 	return (
 		<div className="text-center py-10 px-5 bg-[#fefefe]">
-			<h2 className="text-[#0099cc] text-3xl mb-8">About Us</h2>
+			<h2 className="text-[#219EBC] text-[42px] font-black mb-8">About Us</h2>
 
 			<div className="mx-auto w-[90%] max-w-[1000px] border-2 border-orange-400 rounded-lg overflow-hidden bg-white shadow-md">
 				<div className="flex gap-3 bg-[#f3f3f3] p-2.5 border-b border-orange-400 justify-start flex-wrap">
-					<button className="bg-white border border-gray-300 rounded px-2.5 py-1.5 text-sm cursor-pointer transition-colors duration-200 hover:bg-gray-200">
-						<b>𝘢</b>
-					</button>
-					<button className="bg-white border border-gray-300 rounded px-2.5 py-1.5 text-sm cursor-pointer transition-colors duration-200 hover:bg-gray-200">
-						<b>B</b>
-					</button>
-					<button className="bg-white border border-gray-300 rounded px-2.5 py-1.5 text-sm cursor-pointer transition-colors duration-200 hover:bg-gray-200">
-						<i>I</i>
-					</button>
-					<button className="bg-white border border-gray-300 rounded px-2.5 py-1.5 text-sm cursor-pointer transition-colors duration-200 hover:bg-gray-200">
-						🖋️
-					</button>
-					<button className="bg-white border border-gray-300 rounded px-2.5 py-1.5 text-sm cursor-pointer transition-colors duration-200 hover:bg-gray-200">
-						🔗
-					</button>
-					<button className="bg-white border border-gray-300 rounded px-2.5 py-1.5 text-sm cursor-pointer transition-colors duration-200 hover:bg-gray-200">
-						📷
-					</button>
-					<button className="bg-white border border-gray-300 rounded px-2.5 py-1.5 text-sm cursor-pointer transition-colors duration-200 hover:bg-gray-200">
-						📄
-					</button>
-					<button className="bg-white border border-gray-300 rounded px-2.5 py-1.5 text-sm cursor-pointer transition-colors duration-200 hover:bg-gray-200">
-						☰
-					</button>
+					{options.map((option, index) => (
+						<button
+							key={index}
+							className="bg-white border border-gray-300 rounded w-8 h-8 text-sm cursor-pointer transition-colors duration-200 hover:bg-gray-200"
+						>
+							{option}
+						</button>
+					))}
 				</div>
 
 				<div className="flex flex-wrap justify-center">
