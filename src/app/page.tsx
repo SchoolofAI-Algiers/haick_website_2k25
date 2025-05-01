@@ -12,10 +12,10 @@ export default function HomePage() {
 			<Hero />
 			<About />
 			<AboutHaick />
-			<Sponsor />
 			<PreviousEditions />
 			<Agenda />
 			<OurMentors />
+			<Sponsor />
 		</main>
 	);
 }
