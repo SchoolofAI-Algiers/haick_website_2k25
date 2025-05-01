@@ -14,84 +14,117 @@ import { Phone, Mail } from "lucide-react";
 
 const Footer = () => {
 	return (
-		<footer className="relative w-full bg-white mt-20">
+		<footer className="relative w-full bg-white mt-10 sm:mt-20">
 			{/* Teal wave decoration */}
 			<Image
 				src={Vector}
 				alt="Background wave"
-				className="w-[220px] absolute left-0 bottom-0"
+				className="w-[120px] sm:w-[180px] md:w-[220px] hidden lg:block absolute left-0 bottom-0"
 			/>
 
-			<div className="container py-8 relative z-10 pl-32">
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-20">
+			<div className="container mx-auto px-4 sm:px-6 py-8 relative z-10">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-10 sm:pb-26 pl:0 lg:pl-28">
 					{/* Logo and social media section */}
-					<div className="flex flex-col items-start">
+					<div className="flex flex-col items-center sm:items-start">
 						{/* HAICK Logo */}
 						<div className="mb-6">
-							<Image src={HaickLogo} alt="HAICK Logo" className="h-16 w-auto" />
+							<Image
+								src={HaickLogo}
+								alt="HAICK Logo"
+								className="h-12 sm:h-16 w-auto"
+							/>
 						</div>
 
 						{/* Social Media Icons */}
 						<div className="flex space-x-4">
 							<Link href="#" aria-label="Facebook">
-								<Image src={Faceboot} alt="Facebook" className="h-8 w-8" />
+								<Image
+									src={Faceboot}
+									alt="Facebook"
+									className="h-6 w-6 sm:h-8 sm:w-8"
+								/>
 							</Link>
 							<Link href="#" aria-label="Instagram">
-								<Image src={Instagram} alt="Instagram" className="h-8 w-8" />
+								<Image
+									src={Instagram}
+									alt="Instagram"
+									className="h-6 w-6 sm:h-8 sm:w-8"
+								/>
 							</Link>
 							<Link href="#" aria-label="YouTube">
-								<Image src={Youtube} alt="YouTube" className="h-8 w-8" />
+								<Image
+									src={Youtube}
+									alt="YouTube"
+									className="h-6 w-6 sm:h-8 sm:w-8"
+								/>
 							</Link>
 							<Link href="#" aria-label="LinkedIn">
-								<Image src={LinkedIn} alt="LinkedIn" className="h-8 w-8" />
+								<Image
+									src={LinkedIn}
+									alt="LinkedIn"
+									className="h-6 w-6 sm:h-8 sm:w-8"
+								/>
 							</Link>
 							<Link href="#" aria-label="Twitter/X">
-								<Image src={X} alt="Twitter/X" className="h-8 w-8" />
+								<Image
+									src={X}
+									alt="Twitter/X"
+									className="h-6 w-6 sm:h-8 sm:w-8"
+								/>
 							</Link>
 						</div>
 					</div>
 
 					{/* Find Us section */}
-					<div>
-						<h3 className="text-[#1B7B92] text-2xl font-semibold mb-4">
+					<div className="text-center sm:text-left">
+						<h3 className="text-[#1B7B92] text-xl sm:text-2xl font-semibold mb-4">
 							Find Us
 						</h3>
-						<div className="flex items-start space-x-3 text-gray-800">
+						<div className="flex items-start space-x-3 text-gray-800 justify-center sm:justify-start">
 							<Image
-								src={Location || "/placeholder.svg"}
+								src={Location}
 								alt="Location"
-								className="h-6 w-6 mt-1 flex-shrink-0"
+								className="h-5 w-5 sm:h-6 sm:w-6 mt-1 flex-shrink-0"
 							/>
 							<div>
-								<p className="font-medium">Higher National School of</p>
-								<p className="font-medium">Computer Science (ESI - Alger)</p>
-								<p>Oued Smar, Alger</p>
+								<p className="font-medium text-sm sm:text-base">
+									Higher National School of
+								</p>
+								<p className="font-medium text-sm sm:text-base">
+									Computer Science (ESI - Alger)
+								</p>
+								<p className="text-sm sm:text-base">Oued Smar, Alger</p>
 							</div>
 						</div>
 					</div>
 
 					{/* Contact Us section */}
-					<div>
-						<h3 className="text-[#1B7B92] text-2xl font-semibold mb-4">
+					<div className="text-center sm:text-left">
+						<h3 className="text-[#1B7B92] text-xl sm:text-2xl font-semibold mb-4">
 							Contact Us
 						</h3>
 						<div className="space-y-3">
-							<div className="flex items-center space-x-3">
-								<Phone className="h-5 w-5 text-[#219EBC]" />
-								<span className="text-gray-800">+213 6 55 69 66 17</span>
+							<div className="flex items-center space-x-3 justify-center sm:justify-start">
+								<Phone className="h-4 w-4 sm:h-5 sm:w-5 text-[#219EBC]" />
+								<span className="text-gray-800 text-sm sm:text-base">
+									+213 6 55 69 66 17
+								</span>
 							</div>
-							<div className="flex items-center space-x-3">
-								<Mail className="h-5 w-5 text-[#219EBC]" />
-								<span className="text-gray-800">schoolofai.algiers@esi.dz</span>
+							<div className="flex items-center space-x-3 justify-center sm:justify-start">
+								<Mail className="h-4 w-4 sm:h-5 sm:w-5 text-[#219EBC]" />
+								<span className="text-gray-800 text-sm sm:text-base break-all">
+									schoolofai.algiers@esi.dz
+								</span>
 							</div>
 						</div>
 					</div>
 				</div>
 
 				{/* Copyright */}
-				<div className="mt-12 text-center text-gray-800">
+				<div className="mt-8 sm:mt-12 text-center text-gray-800 text-xs sm:text-sm">
 					<p>
-						Copyright © 2025 School of Ai, ESI Algiers. All Rights Reserved.
+						Copyright © {new Date().getFullYear()} School of Ai, ESI Algiers.
+						All Rights Reserved.
 					</p>
 				</div>
 			</div>
