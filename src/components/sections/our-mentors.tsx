@@ -2,9 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Star, Cloud } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Mentor1 from "../../../public/bg-remove.png";
+import SubtractBlue from "../../../public/assets/our-mentors/Subtract.svg";
+import SubtractOrange from "../../../public/assets/aboutus/Subtract.svg";
+import Star from "../../../public/assets/our-mentors/Star.svg";
+import Cloud from "../../../public/assets/our-mentors/cloud.svg";
 
 export default function OurMentors() {
 	const [activeTab, setActiveTab] = useState(0);
@@ -50,43 +53,41 @@ export default function OurMentors() {
 
 	return (
 		<div className="relative w-full min-h-screen bg-white overflow-hidden">
-			{/* Decorative patterns */}
 			<motion.div
-				className="absolute top-0 right-0 w-64 h-64 opacity-80"
+				className="absolute top-0 -right-16 opacity-80"
 				initial={{ opacity: 0, scale: 0.8 }}
-				animate={{ opacity: 0.8, scale: 1 }}
-				transition={{ duration: 0.8 }}
+				animate={{ opacity: 0.8, scale: 1, rotate: 360 }}
+				transition={{
+					duration: 20,
+					repeat: Infinity,
+					repeatType: "loop",
+					ease: "linear",
+				}}
 			>
 				<Image
-					src="/placeholder.svg?height=256&width=256"
+					src={SubtractOrange}
 					alt="Decorative pattern"
-					width={256}
-					height={256}
-					className="object-contain"
-					style={{
-						filter: "invert(70%) sepia(80%) saturate(500%) hue-rotate(360deg)",
-					}}
+					className="object-contain w-40 h-40"
 				/>
 			</motion.div>
 			<motion.div
-				className="absolute bottom-0 left-0 w-64 h-64 opacity-80"
+				className="absolute bottom-40 -left-16 opacity-80"
 				initial={{ opacity: 0, scale: 0.8 }}
-				animate={{ opacity: 0.8, scale: 1 }}
-				transition={{ duration: 0.8 }}
+				animate={{ opacity: 0.8, scale: 1, rotate: 360 }}
+				transition={{
+					duration: 20,
+					repeat: Infinity,
+					repeatType: "loop",
+					ease: "linear",
+				}}
 			>
 				<Image
-					src="/placeholder.svg?height=256&width=256"
+					src={SubtractBlue}
 					alt="Decorative pattern"
-					width={256}
-					height={256}
-					className="object-contain"
-					style={{
-						filter: "invert(70%) sepia(80%) saturate(500%) hue-rotate(160deg)",
-					}}
+					className="object-contain w-40 h-40"
 				/>
 			</motion.div>
 
-			{/* Main content */}
 			<div className="container mx-auto px-4 py-12 relative z-10">
 				{/* Header */}
 				<motion.div
@@ -96,13 +97,11 @@ export default function OurMentors() {
 					transition={{ duration: 0.5 }}
 				>
 					<h1 className="text-5xl font-bold text-[#1DA1B8]">Our Mentors</h1>
-					<Star className="text-[#F9A826] w-10 h-10" />
-					<Cloud className="text-[#F9A826] w-10 h-10" />
+					{/* <Image src={Star} alt="Star" className="w-8 h-8" />
+					<Image src={Cloud} alt="Star" className="w-8 h-8" /> */}
 				</motion.div>
 
-				{/* Tabs */}
 				<div className="max-w-4xl mx-auto">
-					{/* Vercel-style tab navigation */}
 					<div className="relative flex border-b border-gray-200">
 						{mentors.map((mentor, index) => (
 							<button
@@ -128,7 +127,6 @@ export default function OurMentors() {
 						))}
 					</div>
 
-					{/* Mentor Profile with Animation */}
 					<AnimatePresence mode="wait">
 						<motion.div
 							key={activeTab}
@@ -138,7 +136,6 @@ export default function OurMentors() {
 							transition={{ duration: 0.3 }}
 							className="mt-8 flex flex-col md:flex-row gap-6"
 						>
-							{/* Profile Image */}
 							<motion.div
 								className="w-full md:w-1/3"
 								initial={{ x: -30, opacity: 0 }}
@@ -156,7 +153,6 @@ export default function OurMentors() {
 								</div>
 							</motion.div>
 
-							{/* Profile Info */}
 							<motion.div
 								className="w-full md:w-2/3"
 								initial={{ x: 30, opacity: 0 }}
