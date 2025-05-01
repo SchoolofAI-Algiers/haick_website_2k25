@@ -204,14 +204,7 @@ export default function AgendaComponent() {
 	};
 
 	return (
-		<div
-			className="w-full min-h-screen py-12 bg-gray-100 relative overflow-hidden"
-			style={{
-				backgroundImage:
-					"linear-gradient(#e6ecef 1px, transparent 1px), linear-gradient(to right, #e6ecef 1px, transparent 1px)",
-				backgroundSize: "20px 20px",
-			}}
-		>
+		<div className="w-full min-h-screen py-12 relative overflow-hidden">
 			<h1 className="text-5xl font-bold text-center mb-12 text-[#26a0b9]">
 				Agenda
 			</h1>

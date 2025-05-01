@@ -1,7 +1,15 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 html {
 	scroll-behavior: smooth;
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
 }
 
 :root {
@@ -99,4 +107,22 @@ html {
 	--sidebar-accent-foreground: oklch(0.985 0 0);
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.646 0.222 41.116);
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+.marquee-content {
+	animation: marquee 20s linear infinite;
+}
+
+/* Optional: Pause on hover */
+.marquee-content:hover {
+	animation-play-state: paused;
 }
