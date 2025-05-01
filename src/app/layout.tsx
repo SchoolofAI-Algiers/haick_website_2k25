@@ -1,20 +1,21 @@
 import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/layout/nav-bar";
 import PreLoaderProvider from "@/providers/preloader-provider";
 import Footer from "@/components/layout/footer";
 import SiteBg from "@/components/layout/SiteBg";
+import { Inter, Playfair_Display } from "next/font/google";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const textFont = Inter({
 	subsets: ["latin"],
+	variable: "--font-text",
+	display: "swap",
 });
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
+const titleFont = Playfair_Display({
 	subsets: ["latin"],
+	variable: "--font-title",
+	display: "swap",
 });
-
 export const metadata = {
 	title: "HAICK 2025",
 	description: "Event landing page",
@@ -26,10 +27,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning>
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
+		<html
+			lang="en"
+			suppressHydrationWarning
+			className={`${textFont.variable} ${titleFont.variable}`}
+		>
+			<body className={`antialiased`}>
 				{/* <PreLoaderProvider> */}
 				<SiteBg />
 				<Navbar />

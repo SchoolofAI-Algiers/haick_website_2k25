@@ -129,11 +129,11 @@ export default function Navbar() {
 				<div className="flex-1 flex justify-end items-center gap-4">
 					<Link href="#register" className="hidden md:block cursor-pointer">
 						<div className="group relative">
-							<button className="border-2 border-[#FF8A18] backdrop-blur-sm p-[2px] rounded-[20px] transition-all duration-300 cursor-pointer group-hover:p-0">
+							<div className="border-2 border-[#FF8A18] backdrop-blur-sm p-[2px] rounded-[20px] transition-all duration-300 cursor-pointer group-hover:p-0">
 								<button className="border-2 border-[#F7A209] backdrop-blur-sm px-5 py-[6px] rounded-[18px] transition-all duration-300 cursor-pointer">
 									<span className="text-[#54B2C8] font-bold">Register</span>
 								</button>
-							</button>
+							</div>
 						</div>
 					</Link>
 

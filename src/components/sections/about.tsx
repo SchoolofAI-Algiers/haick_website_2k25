@@ -28,7 +28,7 @@ const About = () => {
 	];
 
 	return (
-		<div className="text-center px-5 overflow-visible mb-24">
+		<main className="text-center px-5 overflow-visible mb-24">
 			<h2 className="text-[#219EBC] text-[42px] font-black mb-8">About Us</h2>
 
 			<div className="relative mx-auto w-[90%] max-w-[1000px]">
@@ -78,7 +78,7 @@ const About = () => {
 
 						<div className="flex-1 w-full md:w-1/2 p-5 text-left box-border bg-[#FFFFFF] ">
 							<h3 className="text-xl font-bold">Who are we?</h3>
-							<p className="text-[15px] leading-relaxed">
+							<div className="text-[15px] leading-relaxed">
 								<TypingAnimation
 									startOnView={true}
 									duration={50}
@@ -134,7 +134,7 @@ const About = () => {
 									, alongside internal events designed specifically for its
 									members.
 								</TypingAnimation>
-							</p>
+							</div>
 
 							<Link
 								href="https://soai.netlify.app"
@@ -160,7 +160,7 @@ const About = () => {
 					className="absolute -top-10 sm:-top-20 -right-10 sm:-right-23 w-28 sm:w-36 md:w-48 -z-10"
 				/>
 			</div>
-		</div>
+		</main>
 	);
 };
 
