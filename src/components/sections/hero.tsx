@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -40,24 +41,6 @@ export default function Hero() {
 			id="home"
 			className="relative pb-24 px-6 min-h-screen flex items-center justify-center text-center overflow-hidden bg-white"
 		>
-			{/* Background quadrants */}
-			<div
-				className="absolute top-0 left-0 w-1/2 h-1/2 bg-no-repeat bg-cover opacity-25 z-0"
-				style={{ backgroundImage: "url('/bg-shape2.png')" }}
-			></div>
-			<div
-				className="absolute top-0 right-0 w-1/2 h-1/2 bg-no-repeat bg-cover opacity-25 z-0"
-				style={{ backgroundImage: "url('/bg-shape.png')" }}
-			></div>
-			<div
-				className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-no-repeat bg-cover opacity-25 z-0"
-				style={{ backgroundImage: "url('/bg-shape.png')" }}
-			></div>
-			<div
-				className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-no-repeat bg-cover opacity-25 z-0"
-				style={{ backgroundImage: "url('/bg-shape2.png')" }}
-			></div>
-
 			<div className="relative z-10 w-full mx-auto px-4 flex flex-col items-center">
 				<Image
 					src="/hero-logo.png"

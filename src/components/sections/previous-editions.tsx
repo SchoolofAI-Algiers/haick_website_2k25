@@ -22,7 +22,7 @@ export default function PreviousEditions() {
 						<Input
 							type="text"
 							placeholder="Search in Datasets"
-							className="pl-10 pr-4 py-2 border-2 border-amber-400 rounded-md w-full h-12"
+							className="pl-10 pr-4 py-2 border-2 border-amber-400 rounded-md w-full h-12 outline-none"
 						/>
 					</div>
 				</div>
@@ -57,7 +57,7 @@ export default function PreviousEditions() {
 					<div className="flex justify-center py-6">
 						<div className="text-5xl font-bold">
 							<span className="text-[#3A1C71]">H</span>
-							<span className="text-[#3A1C71]">i</span>
+							<span className="text-[#43CEA2]">A</span>
 							<span className="text-[#43CEA2]">i</span>
 							<span className="text-[#3A1C71]">CK</span>
 						</div>
