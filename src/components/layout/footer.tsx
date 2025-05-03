@@ -1,6 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import Vector from "../../../public/assets/footer/Vector.svg";
+import Faceboot from "../../../public/assets/footer/facebook.svg";
+import Instagram from "../../../public/assets/footer/instagram.svg";
+import Youtube from "../../../public/assets/footer/youtube.svg";
+import LinkedIn from "../../../public/assets/footer/linkedin.svg";
+import X from "../../../public/assets/footer/X.svg";
+import HaickLogo from "../../../public/assets/haick-logo.svg";
+import Location from "../../../public/assets/footer/location.svg";
+import { Phone, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -171,6 +181,7 @@ const Footer = () => {
       </p>
     </div>
   );
+
 };
 
 export default Footer;
