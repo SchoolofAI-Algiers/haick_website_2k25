@@ -6,9 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Mentor1 from "../../../public/bg-remove.png";
 import SubtractBlue from "../../../public/assets/our-mentors/Subtract.svg";
 import SubtractOrange from "../../../public/assets/aboutus/Subtract.svg";
-import Star from "../../../public/assets/our-mentors/Star.svg";
-import Cloud from "../../../public/assets/our-mentors/cloud.svg";
-
+import { AnimateInView } from "../ui/animate-in-view";
 export default function OurMentors() {
 	const [activeTab, setActiveTab] = useState(0);
 
@@ -52,6 +50,11 @@ export default function OurMentors() {
 	const activeMentor = mentors[activeTab];
 
 	return (
+		<AnimateInView
+		animation="fade"
+		delay={500}
+
+		>
 		<div className="relative w-full min-h-screen bg-white overflow-hidden">
 			<motion.div
 				className="absolute top-0 -right-16 opacity-80"
@@ -199,5 +202,6 @@ export default function OurMentors() {
 				</div>
 			</div>
 		</div>
+		</AnimateInView>
 	);
 }

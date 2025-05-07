@@ -1,3 +1,4 @@
+"use client"
 import {
 	Bold,
 	CaseSensitive,
@@ -13,6 +14,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import Subtract from "../../../public/assets/aboutus/Subtract.svg";
+import { AnimateInView } from "../ui/animate-in-view";
 
 const About = () => {
 	const options = [
@@ -28,10 +30,17 @@ const About = () => {
 	];
 
 	return (
+		<AnimateInView>
 		<main className="text-center px-5 overflow-visible mb-24">
-			<h2 className="text-[#219EBC] text-[42px] font-black mb-8">About Us</h2>
+			<h2  
+				className={`text-[#219EBC] text-[42px] font-black mb-8 transition-all duration-1000 transform`}
+			>
+				About Us
+			</h2>
 
-			<div className="relative mx-auto w-[90%] max-w-[1000px]">
+			<div 
+				className={`relative mx-auto w-[90%] max-w-[1000px] transition-all duration-1000 delay-300`}
+			>
 				<Image
 					src={Subtract}
 					alt="subtract"
@@ -44,13 +53,16 @@ const About = () => {
 								key={index}
 								strokeWidth={3}
 								size={26}
-								className="w-6 h-6 sm:w-7 sm:h-7 cursor-pointer transition-colors duration-200 hover:bg-gray-200 p-1 rounded"
+								className={`w-6 h-6 sm:w-7 sm:h-7 cursor-pointer transition-all duration-500 hover:bg-gray-200 p-1 rounded`}
+								style={{ transitionDelay: `${index * 100 + 500}ms` }}
 							/>
 						))}
 					</header>
 
 					<div className="flex flex-col md:flex-row flex-wrap justify-center">
-						<div className="flex-1 w-full md:w-1/2 p-6 text-start text-sm text-gray-800 border-b-3 md:border-b-0 md:border-r-3 border-[#F7A209]">
+						<div 
+							className={`flex-1 w-full md:w-1/2 p-6 text-start text-sm text-gray-800 border-b-3 md:border-b-0 md:border-r-3 border-[#F7A209] transition-all duration-1000`}
+						>
 							<h3 className="text-[#219EBC] font-light text-[16px] mb-3">
 								###**Who are we?**
 							</h3>
@@ -76,7 +88,9 @@ const About = () => {
 							</p>
 						</div>
 
-						<div className="flex-1 w-full md:w-1/2 p-5 text-left box-border bg-[#FFFFFF] ">
+						<div 
+							className={`flex-1 w-full md:w-1/2 p-5 text-left box-border bg-[#FFFFFF] transition-all duration-1000`}
+						>
 							<h3 className="text-xl font-bold">Who are we?</h3>
 							<div className="text-[15px] leading-relaxed">
 								<TypingAnimation
@@ -157,10 +171,11 @@ const About = () => {
 				<Image
 					src={Subtract}
 					alt="subtract"
-					className="absolute -top-10 sm:-top-20 -right-10 sm:-right-23 w-28 sm:w-36 md:w-48 -z-10"
+					className={`absolute -top-10 sm:-top-20 -right-10 sm:-right-23 w-28 sm:w-36 md:w-48 -z-10 transition-opacity duration-1000 delay-700 animate-spin`}
 				/>
 			</div>
 		</main>
+		</AnimateInView>
 	);
 };
 

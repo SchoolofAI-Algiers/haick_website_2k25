@@ -6,6 +6,7 @@ import Image from "next/image";
 
 // Assuming subtract.svg is in the public folder or an appropriate directory
 import subtractIcon from "../../../public/assets/Subtract.svg"; // Adjust the path as needed
+import { AnimateInView } from "../ui/animate-in-view";
 
 export default function FAQ() {
 	// FAQ data with questions from the image and placeholder answers
@@ -46,6 +47,10 @@ export default function FAQ() {
 	};
 
 	return (
+		<AnimateInView
+		delay={400}
+		animation="fade"
+		>
 		<div className="w-full py-12 relative overflow-hidden">
 			<h1 className="text-5xl font-bold text-center mb-12 text-[#26a0b9]">
 				FAQ
@@ -136,5 +141,6 @@ export default function FAQ() {
 				})}
 			</div>
 		</div>
+		</AnimateInView>
 	);
 }

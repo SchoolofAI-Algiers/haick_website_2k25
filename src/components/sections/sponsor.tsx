@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { AnimateInView } from "../ui/animate-in-view";
 
 export default function Sponsor() {
 	const sponsors = [
@@ -33,6 +34,10 @@ export default function Sponsor() {
 	}, []);
 
 	return (
+		<AnimateInView
+		animation="fade"
+		delay={400}
+		>
 		<section className="py-8 px-4 text-center overflow-hidden">
 			<h2 className="text-4xl text-[#219ebc] font-bold mb-16">Our Sponsors</h2>
 
@@ -71,5 +76,6 @@ export default function Sponsor() {
 				</div>
 			</div>
 		</section>
+		</AnimateInView>
 	);
 }
