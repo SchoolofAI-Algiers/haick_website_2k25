@@ -28,6 +28,8 @@ export function StaggeredChildren({
       React.HTMLAttributes<HTMLElement> & {
         className?: string;
         style?: React.CSSProperties;
+        'data-animate'?: string;
+        'data-delay'?: number | string;
       }
     >;
     
