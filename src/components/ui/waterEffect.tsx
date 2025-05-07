@@ -90,7 +90,7 @@ export default function WaterEffect() {
       }}
     >
       {/* Background pattern from hero_bg.png */}
-      <div className="hidden lg:absolute pattern-bg" style={{
+      <div className="hidden lg:block pattern-bg" style={{
         position: "absolute",
         top: 0,
         left: 0,
