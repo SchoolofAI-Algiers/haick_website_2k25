@@ -105,11 +105,11 @@ export default function Hero() {
             <div key={key} className="relative">
               <div className="flex flex-col items-center justify-center w-20 h-24 md:w-28 md:h-28 rounded-t-full border-4 border-[#FF8A18] bg-white relative">
                 {/* Inner border */}
-                <div className="absolute inset-1 rounded-t-full border-4 border-[#F7A209]" />
-                <span className="text-xl md:text-[22px] font-semibold text-[#219EBC] mt-2">
+                <div className="absolute inset-0.5 rounded-t-full border-4 border-[#F7A209]" />
+                <span className="text-md md:text-[2àpx] font-semibold text-[#219EBC] mt-2">
                   {value}
                 </span>
-                <span className="uppercase text-md md:text-md font-semibold text-[#219EBC] mb-2">
+                <span className="uppercase text-sm px-0.5 md:text-md font-semibold text-[#219EBC] mb-2">
                   {key}
                 </span>
               </div>
