@@ -51,7 +51,7 @@ export default function FAQ() {
 		delay={400}
 		animation="fade"
 		>
-		<div className="w-full py-12 relative overflow-hidden">
+		<div className="w-full px-4 lg:px-8 py-12 relative overflow-hidden">
 			<h1 className="text-5xl font-bold text-center mb-12 text-[#26a0b9]">
 				FAQ
 			</h1>

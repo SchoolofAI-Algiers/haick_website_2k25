@@ -55,7 +55,7 @@ export default function OurMentors() {
 		delay={500}
 
 		>
-		<div className="relative w-full min-h-screen bg-white overflow-hidden">
+		<div className="relative w-full px-4 lg:px-8 min-h-screen bg-white overflow-hidden">
 			<motion.div
 				className="absolute top-0 -right-16 opacity-80"
 				initial={{ opacity: 0, scale: 0.8 }}
@@ -145,13 +145,12 @@ export default function OurMentors() {
 								animate={{ x: 0, opacity: 1 }}
 								transition={{ delay: 0.2, duration: 0.4 }}
 							>
-								<div className="rounded-lg overflow-hidden bg-[#E8E1D9] h-[300px] shadow-md">
+								<div className="relative rounded-lg overflow-hidden bg-[#E8E1D9] h-[300px] shadow-md">
 									<Image
 										src={activeMentor.image || "/placeholder.svg"}
 										alt={`${activeMentor.title} profile`}
-										width={400}
-										height={400}
-										className="w-full h-full object-cover"
+										fill
+										className="relative w-full h-full object-cover"
 									/>
 								</div>
 							</motion.div>

@@ -112,10 +112,10 @@ export default function PreviousEditions() {
 						<AnimateInView animation="fade-slide" direction="up" delay={1200}>
 							<div className="flex justify-center py-6">
 								<div className="text-5xl font-bold">
-									<span className="text-[#3A1C71]">H</span>
+									<span className="text-[#219ebc]">H</span>
 									<span className="text-[#43CEA2]">A</span>
 									<span className="text-[#43CEA2]">i</span>
-									<span className="text-[#3A1C71]">CK</span>
+									<span className="text-[#219ebc]">CK</span>
 								</div>
 							</div>
 						</AnimateInView>
@@ -123,7 +123,7 @@ export default function PreviousEditions() {
 						{/* Stats */}
 						<AnimateInView animation="fade" delay={1500}>
 							<StaggeredChildren baseDelay={300} staggerDelay={200}>
-								<div className="flex justify-center gap-12 pb-10">
+								<div className="flex justify-center gap-6 lg:gap-12 pb-10 text-slate-700">
 									<div className="text-center">
 										<div className="text-3xl font-bold">+60</div>
 										<div className="text-xl">Participants</div>

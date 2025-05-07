@@ -33,7 +33,6 @@ export default function RootLayout({
 			className={`${textFont.variable} ${titleFont.variable}`}
 		>
 			<body className={`antialiased`}>
-				{/* <PreLoaderProvider> */}
 				<SiteBg />
 				<Navbar />
 				{children}

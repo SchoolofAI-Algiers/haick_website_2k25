@@ -11,6 +11,7 @@ export default function Navbar() {
 	const [hasScrolled, setHasScrolled] = useState(false);
 	const navRef = useRef<HTMLDivElement>(null);
 
+	console.log("caleeeeeeeeeeeeed.....")
 	const toggleMenu = () => {
 		setMenuOpen(!menuOpen);
 	};

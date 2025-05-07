@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 type Ripple = {
   id: number;
@@ -14,7 +14,7 @@ export default function WaterEffect() {
   const addRipple = useCallback(
     (x: number, y: number) => {
       const now = Date.now();
-      if (now - lastRippleTime < 100) return; // Throttle ripple creation
+      if (now - lastRippleTime < 100) return;
 
       const newRipple = {
         id: now,
@@ -22,7 +22,7 @@ export default function WaterEffect() {
         top: y,
       };
 
-      setRipples((prevRipples) => [...prevRipples.slice(-5), newRipple]); // Keep max 6 ripples
+      setRipples((prevRipples) => [...prevRipples.slice(-5), newRipple]);
       setLastRippleTime(now);
 
       setTimeout(() => {

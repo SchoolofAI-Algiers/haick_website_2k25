@@ -41,7 +41,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative py-24 bg-amber-500 pb-24 px-6 min-h-screen flex items-center justify-center text-center overflow-hidden"
+      className="relative py-24 pb-24 px-6 min-h-screen flex items-center justify-center text-center overflow-hidden"
     >
       {/* Water effect with hero_bg.png background */}
       <div className="absolute inset-0 z-0">

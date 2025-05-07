@@ -6,7 +6,7 @@ import { StaggeredChildren } from "@/components/ui/staggered-children";
 
 const AboutHaick = () => {
 	return (
-		<div className="py-16 px-8 bg-[#fcfcfc] text-center">
+		<div className="py-16 px-4 lg:px-8 bg-[#fcfcfc] text-center">
 			<AnimateInView animation="fade-slide" direction="up">
 				<h2 className="text-4xl text-[#219ebc] font-bold mb-8">About Haick</h2>
 			</AnimateInView>
@@ -85,7 +85,7 @@ const AboutHaick = () => {
 
 						{/* Front Image with Dual Frames */}
 						<AnimateInView animation="fade-slide" direction="left" delay={1200} className="z-20">
-							<div className="group absolute top-15 left-35 z-20 w-[190px] h-[260px]">
+							<div className="group absolute top-15 left-30 z-20 w-[190px] h-[260px]">
 								{/* Larger Frame (Background) */}
 								<div className="absolute inset-[-12px] border-6 border-[#219ebc] rounded-t-full rounded-b-lg opacity-50 transition-all duration-300 group-hover:opacity-100 group-hover:shadow-lg" />
 								{/* Smaller Frame (Directly around image) */}

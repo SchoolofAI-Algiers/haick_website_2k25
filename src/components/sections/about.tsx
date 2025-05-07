@@ -15,6 +15,7 @@ import Image from "next/image";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import Subtract from "../../../public/assets/aboutus/Subtract.svg";
 import { AnimateInView } from "../ui/animate-in-view";
+import { useEffect, useRef, useState } from "react";
 
 const About = () => {
 	const options = [
@@ -29,9 +30,49 @@ const About = () => {
 		List,
 	];
 
+	// References and state for calculating and storing final text dimensions
+	const textContainerRef = useRef<HTMLDivElement>(null);
+	const [textContainerHeight, setTextContainerHeight] = useState(0);
+
+	// Calculate the final height once when component mounts
+	useEffect(() => {
+		// Function to calculate the height needed for the full text
+		const calculateHeight = () => {
+			if (textContainerRef.current) {
+				// Temporarily make all text visible to calculate height
+				const container = textContainerRef.current;
+				const typingElements = container.querySelectorAll('[data-typing-animation="true"]');
+				
+				// Show all text temporarily
+				typingElements.forEach(el => {
+					if (el instanceof HTMLElement) {
+						el.style.opacity = '1';
+						el.style.visibility = 'visible';
+					}
+				});
+				
+				// Get the height
+				const height = container.scrollHeight;
+				setTextContainerHeight(height);
+				
+				// Hide text again for animation
+				typingElements.forEach(el => {
+					if (el instanceof HTMLElement) {
+						el.style.opacity = '';
+						el.style.visibility = '';
+					}
+				});
+			}
+		};
+		
+		// Allow a small delay for the DOM to render
+		const timer = setTimeout(calculateHeight, 100);
+		return () => clearTimeout(timer);
+	}, []);
+
 	return (
 		<AnimateInView>
-		<main className="text-center px-5 overflow-visible mb-24">
+		<main className="text-center px-4 lg:px-8 w-full mb-24">
 			<h2  
 				className={`text-[#219EBC] text-[42px] font-black mb-8 transition-all duration-1000 transform`}
 			>
@@ -39,7 +80,7 @@ const About = () => {
 			</h2>
 
 			<div 
-				className={`relative mx-auto w-[90%] max-w-[1000px] transition-all duration-1000 delay-300`}
+				className={`relative mx-auto w-[90%] transition-all duration-1000 delay-300`}
 			>
 				<Image
 					src={Subtract}
@@ -92,12 +133,22 @@ const About = () => {
 							className={`flex-1 w-full md:w-1/2 p-5 text-left box-border bg-[#FFFFFF] transition-all duration-1000`}
 						>
 							<h3 className="text-xl font-bold">Who are we?</h3>
-							<div className="text-[15px] leading-relaxed">
+							
+							{/* Container with fixed height to prevent layout shifts */}
+							<div 
+								ref={textContainerRef}
+								className="text-[15px] leading-relaxed"
+								style={{ 
+									minHeight: textContainerHeight > 0 ? `${textContainerHeight}px` : 'auto',
+									position: 'relative'
+								}}
+							>
 								<TypingAnimation
 									startOnView={true}
 									duration={50}
 									delay={0}
 									className="inline text-[#219EBC] font-medium text-[15px]"
+									data-typing-animation="true"
 								>
 									School of AI Algiers
 								</TypingAnimation>{" "}
@@ -106,6 +157,7 @@ const About = () => {
 									duration={20}
 									delay={1150}
 									className="inline text-[15px] leading-relaxed font-normal"
+									data-typing-animation="true"
 								>
 									is a scientific club established in 2018 at the Higher
 									National School of Computer Science (ESI Algiers). The club
@@ -118,6 +170,7 @@ const About = () => {
 									duration={50}
 									delay={7530}
 									className="inline text-[#F7A209] leading-relaxed font-medium text-[15px]"
+									data-typing-animation="true"
 								>
 									a range of events
 								</TypingAnimation>{" "}
@@ -126,6 +179,7 @@ const About = () => {
 									duration={20}
 									delay={8430}
 									className="inline text-[15px] leading-relaxed font-normal"
+									data-typing-animation="true"
 								>
 									, including Haick, a datathon where participants address AI
 									and data science challenges. Additionally, the club hosts
@@ -136,6 +190,7 @@ const About = () => {
 									duration={50}
 									delay={11990}
 									className="inline text-[15px] leading-relaxed text-[#F7A209] font-medium"
+									data-typing-animation="true"
 								>
 									Ai Summit and Indaba
 								</TypingAnimation>
@@ -144,6 +199,7 @@ const About = () => {
 									duration={20}
 									delay={13090}
 									className="inline text-[15px] leading-relaxed font-normal"
+									data-typing-animation="true"
 								>
 									, alongside internal events designed specifically for its
 									members.
@@ -154,7 +210,7 @@ const About = () => {
 								href="https://soai.netlify.app"
 								target="_blank"
 								rel="noreferrer"
-								className="text-[#219EBC] underline"
+								className="text-[#219EBC] underline block mt-2"
 							>
 								<TypingAnimation
 									startOnView={true}
@@ -168,11 +224,7 @@ const About = () => {
 						</div>
 					</div>
 				</div>
-				<Image
-					src={Subtract}
-					alt="subtract"
-					className={`absolute -top-10 sm:-top-20 -right-10 sm:-right-23 w-28 sm:w-36 md:w-48 -z-10 transition-opacity duration-1000 delay-700 animate-spin`}
-				/>
+				
 			</div>
 		</main>
 		</AnimateInView>
